@@ -23,9 +23,10 @@ export async function buildTenderPackagePdf({
   const helvetica = await mergedPdf.embedFont(StandardFonts.Helvetica);
   const helveticaBold = await mergedPdf.embedFont(StandardFonts.HelveticaBold);
 
-  // Filter only requirements that have an active matched file, sorted by order
+  // Filter only requirements that have an active matched file, strictly sorted by order
+  const sortedRequirements = [...requirements].sort((a, b) => (a.order || 0) - (b.order || 0));
   const includedItems = [];
-  for (const req of requirements) {
+  for (const req of sortedRequirements) {
     const matched = matches[req.id];
     if (matched && (matched.arrayBuffer || matched.bytes)) {
       includedItems.push({

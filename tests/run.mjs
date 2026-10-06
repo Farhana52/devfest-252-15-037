@@ -275,12 +275,21 @@ await itAsync('Generates complete PDF package with Cover Page, documents, and fo
     expiryDates,
   });
 
-  assert.ok(pdfBytes && pdfBytes.length > 0, 'PDF bytes generated');
-
   // Verify merged PDF structure with pdf-lib
   const parsedPdf = await PDFDocument.load(pdfBytes);
   // Cover page (1) + trade_license (2 pages) + tin_vat (1 page) = 4 pages total
   assert.strictEqual(parsedPdf.getPageCount(), 4, 'Total pages must equal 1 cover + 2 doc1 + 1 doc2 = 4');
+
+  // Verify that passing shuffled requirements still preserves strict order ascending
+  const shuffledReqs = [reqJson.requirements[1], reqJson.requirements[0]];
+  const pdfBytesShuffled = await buildTenderPackagePdf({
+    tender: reqJson.tender,
+    requirements: shuffledReqs,
+    matches,
+    expiryDates,
+  });
+  const parsedShuffled = await PDFDocument.load(pdfBytesShuffled);
+  assert.strictEqual(parsedShuffled.getPageCount(), 4, 'Shuffled requirements still produce identical ordered package');
 
   // Verify output directory exists and save sample output
   const outputDir = path.resolve('output');

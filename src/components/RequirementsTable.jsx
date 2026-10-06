@@ -160,15 +160,22 @@ export function RequirementsTable({
                           const isAssignedElsewhere =
                             matchedFileIdToReqId[file.id] &&
                             matchedFileIdToReqId[file.id] !== req.id;
+                          const isDuplicateAssignedElsewhere =
+                            file.hash &&
+                            Object.entries(matches).some(
+                              ([rId, f]) => rId !== req.id && f && f.hash === file.hash
+                            );
+                          const isDisabled = isAssignedElsewhere || isDuplicateAssignedElsewhere;
+
                           return (
                             <option
                               key={file.id}
                               value={file.id}
-                              disabled={isAssignedElsewhere}
+                              disabled={isDisabled}
                             >
                               {file.name} ({file.pageCount || 1} {file.pageCount === 1 ? t.page : t.pages})
-                              {isAssignedElsewhere ? ` [Assigned]` : ''}
-                              {file.isDuplicate ? ` [Duplicate]` : ''}
+                              {isAssignedElsewhere ? ` [${lang === 'bn' ? 'সংযুক্ত' : 'Assigned'}]` : ''}
+                              {isDuplicateAssignedElsewhere ? ` [${lang === 'bn' ? 'ডুপ্লিকেট ব্যবহৃত' : 'Duplicate Assigned'}]` : ''}
                             </option>
                           );
                         })}
