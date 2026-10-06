@@ -11,7 +11,6 @@ import {
   Clock,
   Ban,
   FileQuestion,
-  HelpCircle,
   Loader2,
 } from 'lucide-react';
 import { STATUS_CODES } from '../lib/status';
@@ -231,35 +230,6 @@ export function PackageActions({
         )}
       </div>
 
-      {/* Status Legend Section */}
-      <div className="mt-6 pt-4 border-t border-slate-100">
-        <div className="flex items-center gap-1.5 text-xs font-bold text-slate-600 mb-2">
-          <HelpCircle className="w-3.5 h-3.5 text-slate-400" />
-          <span>{t.legend}</span>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] text-slate-500">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-            <span>{t.legendOk}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
-            <span>{t.legendMissing}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
-            <span>{t.legendExpiryNeeded}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-            <span>{t.legendExpired}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-slate-400 shrink-0" />
-            <span>{t.legendNotProvided}</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
