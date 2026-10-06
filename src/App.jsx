@@ -11,7 +11,6 @@ import { validateRequirementsJson, validateUploadedFile, validateUploadLimits, f
 import { computeFileHash, markDuplicateFiles } from './lib/hasher';
 import { evaluatePackageStatus } from './lib/status';
 import { buildTenderPackagePdf } from './lib/pdfBuilder';
-import { autoMatchFiles } from './lib/autoMatcher';
 import { exportChecklistCsv } from './lib/csvExporter';
 import { translations } from './i18n/translations';
 import { AlertCircle, CheckCircle2, Info } from 'lucide-react';
@@ -248,21 +247,6 @@ export function App() {
     const updated = { ...matches };
     delete updated[reqId];
     setMatches(updated);
-  };
-
-  // Auto-match helper
-  const handleAutoMatch = () => {
-    if (uploadedFiles.length === 0) {
-      triggerAlert(
-        'info',
-        lang === 'bn' ? 'স্বয়ংক্রিয় মিল করতে প্রথমে পিডিএফ ফাইল আপলোড করুন।' : 'Upload PDF files first to run auto-match.'
-      );
-      return;
-    }
-
-    const suggested = autoMatchFiles(requirements, uploadedFiles);
-    setMatches((prev) => ({ ...prev, ...suggested }));
-    triggerAlert('success', t.success.autoMatched);
   };
 
   // Export checklist CSV
@@ -517,7 +501,6 @@ export function App() {
           onGeneratePackage={handleGeneratePackage}
           onDownloadPackage={handleDownloadPackage}
           onPreviewPackage={() => setIsPreviewOpen(true)}
-          onAutoMatch={handleAutoMatch}
           onExportCsv={handleExportCsv}
           onUploadStamp={handleUploadStamp}
           onClearStamp={handleClearStamp}

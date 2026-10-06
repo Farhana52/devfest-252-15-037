@@ -72,9 +72,8 @@ All mandatory tasks specified in the problem statement are fully implemented:
 - ✅ **Bonus 1 — Table of Contents / Index**: Document page table included directly on the Cover Page displaying exact starting page numbers and page counts.
 - ✅ **Bonus 2 — Digital Seal / Signature Stamp**: Allows uploading a PNG stamp/seal, embedding it cleanly on the official cover page.
 - ✅ **Bonus 3 — Export Checklist as CSV**: Downloads an official verification checklist with Document ID, Title, Assigned File, Pages, Expiry Date, and Status.
-- ✅ **Bonus 4 — Auto-Match Files**: Keyword heuristic matching algorithm automatically connects uploaded PDFs to requirements based on filename tokens.
-- ✅ **Bonus 5 — In-App PDF Preview**: Built-in modal viewer to preview the generated PDF package directly in Google Chrome without leaving the application.
-- ✅ **Bonus 6 — Resilient PDF Error Handling**: Corrupt or password-protected PDFs are trapped safely without application crashing, displaying actionable error messages.
+- ✅ **Bonus 4 — In-App PDF Preview**: Built-in modal viewer to preview the generated PDF package directly in Google Chrome without leaving the application.
+- ✅ **Bonus 5 — Resilient PDF Error Handling**: Corrupt or password-protected PDFs are trapped safely without application crashing, displaying actionable error messages.
 
 ---
 

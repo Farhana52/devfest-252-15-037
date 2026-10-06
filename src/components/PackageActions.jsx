@@ -4,7 +4,6 @@ import {
   Download,
   Eye,
   AlertOctagon,
-  Sparkles,
   FileDown,
   Stamp,
   CheckCircle2,
@@ -29,7 +28,6 @@ export function PackageActions({
   onGeneratePackage,
   onDownloadPackage,
   onPreviewPackage,
-  onAutoMatch,
   onExportCsv,
   onUploadStamp,
   onClearStamp,
@@ -62,17 +60,8 @@ export function PackageActions({
           </p>
         </div>
 
-        {/* Bonus Quick Tools */}
+        {/* Quick Tools */}
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            onClick={onAutoMatch}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50/50 hover:bg-blue-100/70 text-blue-700 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
-            title="Auto-match files based on filename heuristics"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{t.autoMatch}</span>
-          </button>
-
           <button
             onClick={onExportCsv}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
