@@ -6,6 +6,7 @@ import { UploadedFilesList } from './components/UploadedFilesList';
 import { RequirementsTable } from './components/RequirementsTable';
 import { PackageActions } from './components/PackageActions';
 import { PdfPreviewModal } from './components/PdfPreviewModal';
+import { SubmissionGuidelines } from './components/SubmissionGuidelines';
 
 import { validateRequirementsJson, validateUploadedFile, validateUploadLimits, findDuplicateMatchingConflicts } from './lib/validator';
 import { computeFileHash, markDuplicateFiles } from './lib/hasher';
@@ -463,13 +464,18 @@ export function App() {
         {/* Two-column layout on large screens: Uploaded Files + Requirements List */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Uploaded Files Box (Task 4.2 & 4.6) */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 space-y-6">
             <UploadedFilesList
               uploadedFiles={uploadedFiles}
               onUploadPdfs={handleUploadPdfs}
               onRemoveFile={handleRemoveFile}
               onClearAll={handleClearAllFiles}
               lang={lang}
+            />
+
+            <SubmissionGuidelines
+              lang={lang}
+              tender={tender}
             />
           </div>
 
