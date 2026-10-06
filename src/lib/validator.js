@@ -145,7 +145,7 @@ export function findDuplicateMatchingConflicts(matches, uploadedFiles) {
   }
 
   const conflicts = [];
-  for (const [hash, entries] of Object.entries(hashToReqs)) {
+  for (const entries of Object.values(hashToReqs)) {
     if (entries.length > 1) {
       const names = entries.map(e => `"${e.fileName}"`).join(' and ');
       conflicts.push(`Identical files ${names} are matched to multiple requirements. Duplicate files cannot be assigned to different documents.`);

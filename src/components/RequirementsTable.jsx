@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, AlertCircle, Clock, FileQuestion, Ban, Calendar, FileText, X } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Clock, FileQuestion, Ban, X } from 'lucide-react';
 import { STATUS_CODES } from '../lib/status';
 import { translations } from '../i18n/translations';
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { BookOpen, CheckCircle, UploadCloud, FileCheck, Calendar, ShieldCheck, AlertCircle } from 'lucide-react';
-import { translations } from '../i18n/translations';
+import { BookOpen, CheckCircle, UploadCloud, FileCheck, Calendar, ShieldCheck } from 'lucide-react';
 
 export function SubmissionGuidelines({ lang, tender }) {
   const isBn = lang === 'bn';

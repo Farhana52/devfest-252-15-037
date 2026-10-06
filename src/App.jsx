@@ -157,7 +157,7 @@ export function App() {
         }
 
         validNewFiles.push({
-          id: `${file.name}-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
+          id: `${file.name}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
           name: file.name,
           size: file.size,
           type: file.type,
@@ -309,7 +309,7 @@ export function App() {
             const hash = await computeFileHash(ab);
             const parsed = await PDFDocument.load(bytes, { ignoreEncryption: true });
             loadedFiles.push({
-              id: `${doc.name}-${Math.random().toString(36).substr(2, 5)}`,
+              id: `${doc.name}-${Math.random().toString(36).slice(2, 7)}`,
               name: doc.name,
               size: ab.byteLength,
               type: 'application/pdf',
@@ -502,7 +502,6 @@ export function App() {
           blockingReasons={blockingReasons}
           isGenerating={isGenerating}
           generatedPdfBlob={generatedPdfBlob}
-          generatedPdfUrl={generatedPdfUrl}
           sealImageName={sealImageName}
           onGeneratePackage={handleGeneratePackage}
           onDownloadPackage={handleDownloadPackage}

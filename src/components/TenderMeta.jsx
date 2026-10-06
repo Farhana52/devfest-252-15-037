@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Calendar, Building2, User2, Hash, FileSpreadsheet, RotateCcw, UploadCloud, FolderSync } from 'lucide-react';
+import { Calendar, Building2, User2, Hash, RotateCcw, UploadCloud, FolderSync } from 'lucide-react';
 import { translations } from '../i18n/translations';
 
 export function TenderMeta({

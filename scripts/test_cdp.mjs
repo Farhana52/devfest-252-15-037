@@ -1,6 +1,5 @@
 import { spawn } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 
 async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

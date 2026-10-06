@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { UploadCloud, FileText, Trash2, Copy, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { UploadCloud, FileText, Trash2, Copy, AlertTriangle } from 'lucide-react';
 import { translations } from '../i18n/translations';
 
 export function UploadedFilesList({

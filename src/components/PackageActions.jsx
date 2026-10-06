@@ -22,7 +22,6 @@ export function PackageActions({
   blockingReasons,
   isGenerating,
   generatedPdfBlob,
-  generatedPdfUrl,
   sealImageName,
   onGeneratePackage,
   onDownloadPackage,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Download, ExternalLink } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { translations } from '../i18n/translations';
 
 export function PdfPreviewModal({

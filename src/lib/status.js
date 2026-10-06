@@ -10,15 +10,6 @@ export const STATUS_CODES = {
 };
 
 /**
- * Blocking status set.
- */
-export const BLOCKING_STATUSES = new Set([
-  STATUS_CODES.MISSING,
-  STATUS_CODES.EXPIRY_NEEDED,
-  STATUS_CODES.EXPIRED,
-]);
-
-/**
  * Determine the exact status for a single tender requirement.
  * 
  * @param {Object} requirement - Requirement object from requirements.json
